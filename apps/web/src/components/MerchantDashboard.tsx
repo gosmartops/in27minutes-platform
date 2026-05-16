@@ -62,10 +62,10 @@ const MerchantDashboard: React.FC = () => {
   };
 
   const metricConfig = [
-    { label: 'Speed Score', val: snapshot.speed_score, max: 1000, weight: '40%', color: '#6366f1', icon: Clock },
+    { label: 'Speed Score', val: snapshot.speed_score, max: 1000, weight: '40%', color: '#22d3ee', icon: Clock },
     { label: 'Accuracy Score', val: snapshot.accuracy_score, max: 1000, weight: '25%', color: '#10b981', icon: Package },
     { label: 'Reliability Score', val: snapshot.reliability_score, max: 1000, weight: '15%', color: '#f59e0b', icon: ShieldCheck },
-    { label: 'Location Efficiency', val: snapshot.location_efficiency_score, max: 1000, weight: '10%', color: '#ec4899', icon: Zap },
+    { label: 'Location Efficiency', val: snapshot.location_efficiency_score, max: 1000, weight: '10%', color: '#22d3ee', icon: Zap },
     { label: 'CSat Score', val: snapshot.satisfaction_score, max: 1000, weight: '10%', color: '#8b5cf6', icon: Award },
   ];
 
@@ -76,7 +76,7 @@ const MerchantDashboard: React.FC = () => {
         <div>
           <div className="flex items-center gap-3 mb-2">
             <h1 className="text-4xl font-black gradient-text tracking-tighter">In27Minutes</h1>
-            <span className="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-[10px] font-bold tracking-widest border border-indigo-500/20">MERCHANT NETWORK</span>
+            <span className="px-3 py-1 bg-cyan-400/10 text-cyan-400 rounded-none text-[10px] font-bold tracking-widest border border-cyan-400/20">MERCHANT NETWORK</span>
           </div>
           <p className="text-zinc-500 font-medium tracking-wide uppercase text-xs">AI Reputation-Based Logistics Economy</p>
         </div>
@@ -86,12 +86,12 @@ const MerchantDashboard: React.FC = () => {
             <div className="text-right">
               <p className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">Base Reputation</p>
               <div className="flex items-baseline gap-1">
-                <motion.p key={snapshot.total_score} className="text-3xl font-black text-indigo-400">{snapshot.total_score}</motion.p>
+                <motion.p key={snapshot.total_score} className="text-3xl font-black text-cyan-400">{snapshot.total_score}</motion.p>
                 <span className="text-zinc-600 text-lg font-bold">/1000</span>
               </div>
             </div>
-            <div className="w-12 h-12 rounded-2xl flex items-center justify-center bg-indigo-500/10 border border-indigo-500/20">
-              <Activity className="text-indigo-400" size={24} />
+            <div className="w-12 h-12 rounded-none flex items-center justify-center bg-cyan-400/10 border border-cyan-400/20">
+              <Activity className="text-cyan-400" size={24} />
             </div>
           </div>
         </div>
@@ -109,17 +109,17 @@ const MerchantDashboard: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                className="glass border-2 border-indigo-500 p-8 relative overflow-hidden bg-indigo-500/[0.05]"
+                className="glass border-2 border-cyan-400 p-8 relative overflow-hidden bg-cyan-400/[0.05]"
               >
                 <div className="absolute top-0 right-0 p-4">
                   <div className="flex flex-col items-end">
-                    <span className="text-[10px] font-black text-indigo-400 uppercase mb-1">Acceptance Window</span>
-                    <span className="text-3xl font-mono font-black text-indigo-400">{incomingDemand.countdown}s</span>
+                    <span className="text-[10px] font-black text-cyan-400 uppercase mb-1">Acceptance Window</span>
+                    <span className="text-3xl font-mono font-black text-cyan-400">{incomingDemand.countdown}s</span>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 rounded-2xl bg-indigo-500 flex items-center justify-center text-white glow shadow-[0_0_30px_rgba(99,102,241,0.4)]">
+                  <div className="w-16 h-16 rounded-none bg-cyan-400 flex items-center justify-center text-black glow shadow-[0_0_30px_rgba(34,211,238,0.4)]">
                     <Zap size={32} fill="currentColor" />
                   </div>
                   <div className="flex-1">
@@ -127,11 +127,11 @@ const MerchantDashboard: React.FC = () => {
                     <p className="text-zinc-400 text-sm font-medium mb-6">User intent matched to your performance & stock profile.</p>
                     
                     <div className="grid grid-cols-2 gap-4 mb-8">
-                      <div className="p-4 bg-zinc-900/50 rounded-xl border border-zinc-800">
+                      <div className="p-4 bg-zinc-900/50 rounded-none border border-zinc-800">
                         <p className="text-[10px] text-zinc-500 font-bold uppercase mb-1">Product</p>
                         <p className="text-white font-bold">{incomingDemand.product}</p>
                       </div>
-                      <div className="p-4 bg-zinc-900/50 rounded-xl border border-zinc-800">
+                      <div className="p-4 bg-zinc-900/50 rounded-none border border-zinc-800">
                         <p className="text-[10px] text-zinc-500 font-bold uppercase mb-1">Yield</p>
                         <p className="text-white font-bold">₦{(incomingDemand.price / 1000).toFixed(0)}k</p>
                       </div>
@@ -140,13 +140,13 @@ const MerchantDashboard: React.FC = () => {
                     <div className="flex gap-4">
                       <button 
                         onClick={() => setIncomingDemand(null)}
-                        className="flex-1 py-4 bg-indigo-600 text-white font-black rounded-xl hover:bg-indigo-500 transition-all flex items-center justify-center gap-2"
+                        className="flex-1 py-4 bg-cyan-400 text-black font-black rounded-none hover:bg-white transition-all flex items-center justify-center gap-2"
                       >
                         <CheckCircle2 size={20} /> ACCEPT ORDER
                       </button>
                       <button 
                         onClick={() => setIncomingDemand(null)}
-                        className="px-8 py-4 bg-zinc-800 text-zinc-400 font-black rounded-xl hover:bg-zinc-700 transition-all flex items-center justify-center gap-2"
+                        className="px-8 py-4 bg-zinc-800 text-zinc-400 font-black rounded-none hover:bg-zinc-700 transition-all flex items-center justify-center gap-2"
                       >
                         <XCircle size={20} /> REJECT
                       </button>
@@ -161,7 +161,7 @@ const MerchantDashboard: React.FC = () => {
           {/* Detailed Score Breakdown */}
           <section className="glass p-8">
             <h2 className="text-xl font-bold mb-8 flex items-center gap-3">
-              <BarChart3 className="text-indigo-500" size={24} />
+              <BarChart3 className="text-cyan-400" size={24} />
               Performance DNA
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
@@ -170,7 +170,7 @@ const MerchantDashboard: React.FC = () => {
                   <div className="flex justify-between items-end">
                     <div className="space-y-1">
                       <span className="text-zinc-500 text-[10px] font-black uppercase tracking-widest flex items-center gap-2">
-                        <m.icon size={12} /> {m.label} <span className="text-indigo-500 opacity-50">({m.weight})</span>
+                        <m.icon size={12} /> {m.label} <span className="text-cyan-400 opacity-50">({m.weight})</span>
                       </span>
                       <p className="text-white font-black text-2xl">{m.val.toFixed(0)} <span className="text-zinc-700 text-sm">/ {m.max}</span></p>
                     </div>
@@ -198,13 +198,13 @@ const MerchantDashboard: React.FC = () => {
               {activeOrders.map((order) => (
                 <div key={order.id} className="glass p-6 flex items-center justify-between group hover:border-emerald-500/30 transition-all">
                   <div className="flex items-center gap-6">
-                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center bg-zinc-900 border border-zinc-800 ${order.priority === 'Critical' ? 'text-rose-400' : 'text-emerald-400'}`}>
+                    <div className={`w-14 h-14 rounded-none flex items-center justify-center bg-zinc-900 border border-zinc-800 ${order.priority === 'Critical' ? 'text-rose-400' : 'text-emerald-400'}`}>
                       <Package size={28} />
                     </div>
                     <div>
                       <div className="flex items-center gap-3 mb-1">
                         <span className="font-mono font-bold text-zinc-500 text-xs">{order.id}</span>
-                        <span className="text-[9px] bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded font-black tracking-widest uppercase">{order.type}</span>
+                        <span className="text-[9px] bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded-none font-black tracking-widest uppercase">{order.type}</span>
                       </div>
                       <p className="text-lg text-white font-bold">{order.items}</p>
                     </div>
@@ -231,13 +231,13 @@ const MerchantDashboard: React.FC = () => {
               <AlertTriangle size={18} /> Enforcement Alerts
             </h3>
             <div className="space-y-4">
-              <div className="p-4 bg-rose-500/10 border border-rose-500/20 rounded-xl">
+              <div className="p-4 bg-rose-500/10 border border-rose-500/20 rounded-none">
                 <p className="text-xs font-bold text-white mb-1">Speed Penalty Risk</p>
                 <p className="text-xs text-rose-300 opacity-80 leading-relaxed">
                   Average delivery time is creeping toward 27.2 min. Routing priority may be downgraded to Tier B.
                 </p>
               </div>
-              <div className="p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl">
+              <div className="p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-none">
                 <h4 className="text-xs font-bold text-emerald-400 mb-1 flex items-center gap-1">
                   <Award size={12} /> Reward Unlocked
                 </h4>
@@ -249,14 +249,14 @@ const MerchantDashboard: React.FC = () => {
           </section>
 
           {/* AI Insights - Re-branded */}
-          <section className="glass p-8 bg-indigo-500/[0.03]">
+          <section className="glass p-8 bg-cyan-400/[0.03]">
              <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-2xl bg-indigo-600 flex items-center justify-center text-white glow">
+              <div className="w-12 h-12 rounded-none bg-cyan-400 flex items-center justify-center text-black glow">
                 <TrendingUp size={24} />
               </div>
               <div>
                 <h3 className="font-bold">Yield Engine</h3>
-                <p className="text-[10px] text-indigo-400 font-black uppercase tracking-widest">Market Predictions</p>
+                <p className="text-[10px] text-cyan-400 font-black uppercase tracking-widest">Market Predictions</p>
               </div>
             </div>
             
@@ -272,7 +272,7 @@ const MerchantDashboard: React.FC = () => {
               <div className="pt-2">
                 <p className="text-[10px] text-zinc-500 font-black uppercase mb-4">Network Saturation</p>
                 <div className="h-1 w-full bg-zinc-900 rounded-full">
-                  <div className="h-full bg-indigo-500 w-[65%]" />
+                  <div className="h-full bg-cyan-400 w-[65%]" />
                 </div>
               </div>
             </div>

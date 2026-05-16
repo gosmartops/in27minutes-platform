@@ -2,15 +2,15 @@
 
 :root {
   --bg-color: #050505;
-  --card-bg: rgba(20, 20, 25, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --primary: #6366f1;
-  --secondary: #10b981;
-  --accent: #f59e0b;
+  --card-bg: rgba(10, 10, 10, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --primary: #22d3ee;
+  --secondary: #737373;
+  --accent: #22d3ee;
   --danger: #ef4444;
   --text-primary: #ffffff;
-  --text-secondary: #a1a1aa;
-  --glow-primary: rgba(99, 102, 241, 0.2);
+  --text-secondary: #737373;
+  --glow-primary: rgba(34, 211, 238, 0.3);
 }
 
 * {
@@ -29,10 +29,10 @@ body {
 
 .glass {
   background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--glass-border);
-  border-radius: 16px;
+  border-radius: 32px;
 }
 
 .glow {
@@ -40,23 +40,33 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #fff 0%, #6366f1 100%);
+  background: linear-gradient(135deg, #fff 0%, #22d3ee 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .btn-primary {
-  background: var(--primary);
-  color: white;
+  background: var(--text-primary);
+  color: #000;
   border: none;
-  padding: 12px 24px;
-  border-radius: 12px;
-  font-weight: 600;
+  padding: 16px 32px;
+  border-radius: 0px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 10px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 12px;
+}
+
+.btn-primary:hover {
+  background: var(--primary);
+  color: #000;
+  box-shadow: 0 0 30px var(--glow-primary);
 }
 
 .btn-primary:hover {

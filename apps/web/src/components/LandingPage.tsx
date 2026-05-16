@@ -20,13 +20,13 @@ interface LandingPageProps {
 
 const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerchant }) => {
   return (
-    <div className="bg-zinc-950 text-white selection:bg-indigo-500/30">
+    <div className="bg-zinc-950 text-white selection:bg-cyan-500/30">
       
       {/* Navbar (Internal) */}
       <nav className="fixed top-0 left-0 right-0 z-50 glass border-b-0 border-white/5 bg-zinc-950/50 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center glow">
+            <div className="w-8 h-8 bg-cyan-400 rounded-none flex items-center justify-center glow">
               <Cpu size={18} fill="white" />
             </div>
             <span className="font-black text-xl tracking-tighter">In27Minutes</span>
@@ -38,7 +38,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
           </div>
           <button 
             onClick={onStartShopping}
-            className="px-5 py-2.5 bg-white text-black rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-zinc-200 transition-all flex items-center gap-2"
+            className="px-5 py-2.5 bg-white text-black rounded-none text-[10px] font-black uppercase tracking-widest hover:bg-cyan-400 transition-all flex items-center gap-2"
           >
             Launch App <ArrowRight size={14} />
           </button>
@@ -47,7 +47,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
 
       {/* Hero Section */}
       <section className="relative pt-40 pb-20 px-6 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-indigo-600/10 blur-[120px] rounded-full -z-10" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-cyan-400/10 blur-[120px] rounded-full -z-10" />
         
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
@@ -64,13 +64,13 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <button 
                 onClick={onStartShopping}
-                className="w-full sm:w-auto px-10 py-5 bg-indigo-600 text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] glow hover:bg-indigo-500 transition-all flex items-center justify-center gap-3"
+                className="w-full sm:w-auto px-10 py-5 bg-cyan-400 text-black rounded-none font-black text-xs uppercase tracking-[0.2em] glow hover:bg-white transition-all flex items-center justify-center gap-3"
               >
                 Start Shopping <ArrowRight size={18} />
               </button>
               <button 
                 onClick={onBecomeMerchant}
-                className="w-full sm:w-auto px-10 py-5 bg-zinc-900 text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] border border-zinc-800 hover:border-zinc-700 transition-all"
+                className="w-full sm:w-auto px-10 py-5 bg-zinc-900 text-white rounded-none font-black text-xs uppercase tracking-[0.2em] border border-zinc-800 hover:border-cyan-400 transition-all"
               >
                 Become a Field Merchant
               </button>
@@ -117,12 +117,12 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
                 icon: Zap
               }
             ].map((s, i) => (
-              <div key={i} className="glass p-8 border-white/5 group hover:border-indigo-500/30 transition-all">
+              <div key={i} className="glass p-8 border-white/5 group hover:border-cyan-400/30 transition-all rounded-[32px]">
                 <div className="flex justify-between items-start mb-8">
-                  <div className="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                  <div className="w-12 h-12 rounded-none bg-cyan-400/10 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-400 group-hover:text-black transition-all">
                     <s.icon size={24} />
                   </div>
-                  <span className="font-mono font-black text-indigo-500/20 text-4xl leading-none">{s.step}</span>
+                  <span className="font-mono font-black text-cyan-400/20 text-4xl leading-none">{s.step}</span>
                 </div>
                 <h3 className="text-xl font-bold mb-4">{s.title}</h3>
                 <p className="text-zinc-500 text-sm leading-relaxed">{s.text}</p>
@@ -147,7 +147,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
                   "Optimize delivery in real time"
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <CheckCircle2 size={18} className="text-indigo-500" />
+                    <CheckCircle2 size={18} className="text-cyan-400" />
                     <span className="text-sm font-bold text-zinc-300">{item}</span>
                   </div>
                 ))}
@@ -157,22 +157,22 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
               </p>
             </div>
           </div>
-          <div className="glass p-12 bg-indigo-600/5 border-indigo-500/20 relative overflow-hidden">
-             <div className="absolute -top-24 -right-24 w-64 h-64 bg-indigo-600/20 blur-[80px] rounded-full" />
+          <div className="glass p-12 bg-cyan-400/5 border-cyan-400/20 relative overflow-hidden rounded-[32px]">
+             <div className="absolute -top-24 -right-24 w-64 h-64 bg-cyan-400/20 blur-[80px] rounded-full" />
              <div className="relative z-10 space-y-8">
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-400">
+                  <div className="w-10 h-10 rounded-none bg-cyan-400/20 flex items-center justify-center text-cyan-400">
                     <Bot size={20} />
                   </div>
-                  <div className="bg-zinc-900/50 p-4 rounded-2xl rounded-tl-none border border-white/5 text-sm text-zinc-300">
+                  <div className="bg-zinc-900/50 p-4 rounded-none border border-white/5 text-sm text-zinc-300">
                     "I need a high-spec smartphone for content creation, budget ₦800k, delivery to Victoria Island."
                   </div>
                 </div>
                 <div className="flex flex-row-reverse items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center text-zinc-500">
+                  <div className="w-10 h-10 rounded-none bg-zinc-800 flex items-center justify-center text-zinc-500">
                     <Cpu size={20} />
                   </div>
-                  <div className="bg-indigo-600 p-4 rounded-2xl rounded-tr-none text-sm text-white font-bold glow">
+                  <div className="bg-cyan-400 p-4 rounded-none text-sm text-black font-bold glow">
                     "Analyzing 42 local inventories... Matched with 'Silicon Valley VI'. Delivery ETA: 19 minutes."
                   </div>
                 </div>
@@ -207,8 +207,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
                 { title: "Deliver Directly", icon: Zap },
                 { title: "Performance Driven", icon: TrendingUp }
               ].map((f, i) => (
-                <div key={i} className="glass p-8 border-white/5 flex flex-col justify-between">
-                  <f.icon className="text-indigo-500 mb-8" size={32} />
+                <div key={i} className="glass p-8 border-white/5 flex flex-col justify-between rounded-[32px]">
+                  <f.icon className="text-cyan-400 mb-8" size={32} />
                   <h3 className="text-lg font-bold">{f.title}</h3>
                 </div>
               ))}
@@ -218,7 +218,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
       </section>
 
       {/* 27-Minute Promise */}
-      <section className="py-32 px-6 bg-indigo-600 overflow-hidden relative">
+      <section className="py-32 px-6 bg-cyan-400 overflow-hidden relative">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter italic">The 27-Minute Promise</h2>
@@ -227,8 +227,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {["Nearby Merchant", "Available Stock", "Fast Prep"].map((t, i) => (
-              <div key={i} className="bg-white/10 backdrop-blur-lg border border-white/20 p-6 rounded-2xl">
-                <span className="text-white font-black text-sm uppercase tracking-widest">{t}</span>
+              <div key={i} className="bg-black/20 backdrop-blur-lg border border-black/10 p-6 rounded-none">
+                <span className="text-black font-black text-sm uppercase tracking-widest">{t}</span>
               </div>
             ))}
           </div>
@@ -282,26 +282,26 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
                 { label: "Reliability", val: "97%" },
                 { label: "Satisfaction", val: "4.9/5" }
               ].map((m, i) => (
-                <div key={i} className="p-4 bg-zinc-950/50 rounded-xl border border-white/5">
+                <div key={i} className="p-4 bg-zinc-950/50 rounded-none border border-white/5">
                   <p className="text-[10px] text-zinc-500 font-black uppercase mb-1">{m.label}</p>
                   <p className="text-white font-black text-xl">{m.val}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="glass p-8 border-indigo-500/20">
-            <h4 className="text-[10px] font-black text-indigo-400 uppercase tracking-widest mb-6">Real-Time Scoring Engine</h4>
+          <div className="glass p-8 border-cyan-400/20 rounded-[32px]">
+            <h4 className="text-[10px] font-black text-cyan-400 uppercase tracking-widest mb-6">Real-Time Scoring Engine</h4>
             <div className="space-y-4">
               {[
                 { name: "Merchant #001", score: 982, status: "Active" },
                 { name: "Merchant #002", score: 945, status: "Active" },
                 { name: "Merchant #003", score: 580, status: "Filtered" }
               ].map((m, i) => (
-                <div key={i} className="flex items-center justify-between p-4 bg-zinc-950/50 rounded-xl">
+                <div key={i} className="flex items-center justify-between p-4 bg-zinc-950/50 rounded-none">
                   <span className="text-sm font-bold text-white">{m.name}</span>
                   <div className="flex items-center gap-4">
-                    <span className="font-mono font-black text-indigo-400">{m.score}</span>
-                    <span className={`text-[8px] font-black uppercase px-2 py-1 rounded ${m.status === 'Active' ? 'bg-emerald-500/10 text-emerald-400' : 'bg-rose-500/10 text-rose-400'}`}>
+                    <span className="font-mono font-black text-cyan-400">{m.score}</span>
+                    <span className={`text-[8px] font-black uppercase px-2 py-1 rounded-none ${m.status === 'Active' ? 'bg-emerald-500/10 text-emerald-400' : 'bg-rose-500/10 text-rose-400'}`}>
                       {m.status}
                     </span>
                   </div>
@@ -314,7 +314,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
 
       {/* Final CTA */}
       <section className="py-40 px-6 text-center relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[400px] bg-indigo-600/20 blur-[100px] rounded-full -z-10" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[400px] bg-cyan-400/20 blur-[100px] rounded-full -z-10" />
         <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter">Start Shopping Differently</h2>
         <p className="text-xl text-zinc-400 font-medium mb-12 max-w-xl mx-auto">
           Tell AI what you need. We’ll handle everything else.
@@ -322,13 +322,13 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <button 
             onClick={onStartShopping}
-            className="w-full sm:w-auto px-12 py-6 bg-white text-black rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-zinc-200 transition-all shadow-2xl"
+            className="w-full sm:w-auto px-12 py-6 bg-white text-black rounded-none font-black text-xs uppercase tracking-[0.2em] hover:bg-cyan-400 transition-all shadow-2xl"
           >
             Start Now
           </button>
           <button 
             onClick={onBecomeMerchant}
-            className="w-full sm:w-auto px-12 py-6 bg-zinc-900 text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] border border-zinc-800 hover:bg-zinc-800 transition-all"
+            className="w-full sm:w-auto px-12 py-6 bg-zinc-900 text-white rounded-none font-black text-xs uppercase tracking-[0.2em] border border-zinc-800 hover:border-cyan-400 transition-all"
           >
             Become a Merchant
           </button>
@@ -340,7 +340,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
           <div className="max-w-sm">
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-6 h-6 bg-indigo-600 rounded flex items-center justify-center">
+              <div className="w-6 h-6 bg-cyan-400 rounded-none flex items-center justify-center">
                 <Cpu size={14} fill="white" />
               </div>
               <span className="font-black text-lg tracking-tighter">In27Minutes</span>

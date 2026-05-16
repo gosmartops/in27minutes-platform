@@ -63,12 +63,12 @@ const ChatCommerce: React.FC = () => {
       {/* Chat Header */}
       <header className="p-6 border-b border-zinc-900 flex items-center justify-between bg-zinc-950/50 backdrop-blur-md sticky top-0 z-10">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center glow shadow-[0_0_15px_rgba(99,102,241,0.3)]">
-            <Sparkles size={20} fill="white" />
+          <div className="w-10 h-10 rounded-none bg-cyan-400 flex items-center justify-center glow shadow-[0_0_15px_rgba(34,211,238,0.3)]">
+            <Sparkles size={20} fill="black" />
           </div>
           <div>
             <h1 className="font-black text-lg tracking-tight">In27Minutes</h1>
-            <p className="text-[10px] text-indigo-400 font-bold uppercase tracking-widest">AI Shopping Agent</p>
+            <p className="text-[10px] text-cyan-400 font-bold uppercase tracking-widest">AI Shopping Agent</p>
           </div>
         </div>
       </header>
@@ -77,15 +77,15 @@ const ChatCommerce: React.FC = () => {
       <div ref={scrollRef} className="flex-1 overflow-y-auto p-6 space-y-8 scroll-smooth">
         {messages.map((msg) => (
           <div key={msg.id} className={`flex gap-4 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}>
-            <div className={`w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center ${
-              msg.role === 'assistant' ? 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/20' : 'bg-zinc-800 text-zinc-400 border border-zinc-700'
+            <div className={`w-10 h-10 rounded-none flex-shrink-0 flex items-center justify-center ${
+              msg.role === 'assistant' ? 'bg-cyan-400/10 text-cyan-400 border border-cyan-400/20' : 'bg-zinc-800 text-zinc-400 border border-zinc-700'
             }`}>
               {msg.role === 'assistant' ? <Bot size={20} /> : <User size={20} />}
             </div>
             
             <div className={`space-y-4 max-w-[85%] ${msg.role === 'user' ? 'text-right' : ''}`}>
-              <div className={`inline-block p-4 rounded-2xl text-sm font-medium leading-relaxed whitespace-pre-line ${
-                msg.role === 'user' ? 'bg-indigo-600 text-white shadow-lg' : 'bg-zinc-900 text-zinc-300 border border-zinc-800'
+              <div className={`inline-block p-4 rounded-none text-sm font-medium leading-relaxed whitespace-pre-line ${
+                msg.role === 'user' ? 'bg-cyan-400 text-black shadow-lg font-bold' : 'bg-zinc-900 text-zinc-300 border border-zinc-800'
               }`}>
                 {msg.content}
               </div>
@@ -97,10 +97,10 @@ const ChatCommerce: React.FC = () => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       key={i}
-                      className="glass p-5 border-indigo-500/30 bg-indigo-500/[0.03] group hover:border-indigo-500/50 transition-all cursor-pointer"
+                      className="glass p-5 border-cyan-400/30 bg-cyan-400/[0.03] group hover:border-cyan-400/50 transition-all cursor-pointer rounded-none"
                     >
                       <div className="flex gap-4">
-                        <div className="w-16 h-16 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-indigo-400">
+                        <div className="w-16 h-16 rounded-none bg-zinc-900 border border-zinc-800 flex items-center justify-center text-cyan-400">
                           <Package size={32} />
                         </div>
                         <div className="flex-1">
@@ -110,16 +110,16 @@ const ChatCommerce: React.FC = () => {
                           </div>
                           <p className="text-[10px] text-zinc-500 font-bold uppercase mb-3">{res.merchant_name} · {res.eta_minutes}m · Tier {res.sla_tier}</p>
                           <div className="flex items-center gap-3">
-                            <span className="text-[10px] bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
+                            <span className="text-[10px] bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded-none font-bold flex items-center gap-1">
                               <ShieldCheck size={10} /> Verified Stock
                             </span>
-                            <span className="text-[10px] bg-indigo-500/10 text-indigo-400 px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
+                            <span className="text-[10px] bg-cyan-400/10 text-cyan-400 px-2 py-0.5 rounded-none font-bold flex items-center gap-1">
                               <Clock size={10} /> 27M Promise
                             </span>
                           </div>
                         </div>
                       </div>
-                      <button className="w-full mt-5 py-3 bg-white text-black rounded-xl font-black text-xs uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-zinc-200 transition-colors">
+                      <button className="w-full mt-5 py-3 bg-white text-black rounded-none font-black text-xs uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-cyan-400 transition-colors">
                         BUY NOW <ArrowRight size={14} />
                       </button>
                     </motion.div>
@@ -131,10 +131,10 @@ const ChatCommerce: React.FC = () => {
         ))}
         {isTyping && (
           <div className="flex gap-4">
-            <div className="w-10 h-10 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-none bg-cyan-400/10 text-cyan-400 border border-cyan-400/20 flex items-center justify-center">
               <Bot size={20} />
             </div>
-            <div className="bg-zinc-900 p-4 rounded-2xl flex gap-1 items-center border border-zinc-800">
+            <div className="bg-zinc-900 p-4 rounded-none flex gap-1 items-center border border-zinc-800">
               <motion.div animate={{ opacity: [0.3, 1, 0.3] }} transition={{ repeat: Infinity, duration: 1 }} className="w-1.5 h-1.5 bg-zinc-500 rounded-full" />
               <motion.div animate={{ opacity: [0.3, 1, 0.3] }} transition={{ repeat: Infinity, duration: 1, delay: 0.2 }} className="w-1.5 h-1.5 bg-zinc-500 rounded-full" />
               <motion.div animate={{ opacity: [0.3, 1, 0.3] }} transition={{ repeat: Infinity, duration: 1, delay: 0.4 }} className="w-1.5 h-1.5 bg-zinc-500 rounded-full" />
@@ -151,11 +151,11 @@ const ChatCommerce: React.FC = () => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="What do you need?" 
-            className="w-full bg-zinc-900 border border-zinc-800 rounded-2xl py-4 px-6 pr-16 text-sm font-medium focus:outline-none focus:border-indigo-500/50 transition-all placeholder:text-zinc-600"
+            className="w-full bg-zinc-900 border border-zinc-800 rounded-none py-4 px-6 pr-16 text-sm font-medium focus:outline-none focus:border-cyan-400/50 transition-all placeholder:text-zinc-600"
           />
           <button 
             type="submit"
-            className="absolute right-2 top-2 bottom-2 aspect-square bg-indigo-600 rounded-xl flex items-center justify-center text-white hover:bg-indigo-500 transition-colors"
+            className="absolute right-2 top-2 bottom-2 aspect-square bg-cyan-400 rounded-none flex items-center justify-center text-black hover:bg-white transition-colors"
           >
             <Send size={18} />
           </button>

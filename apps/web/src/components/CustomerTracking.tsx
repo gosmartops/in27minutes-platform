@@ -15,39 +15,39 @@ const CustomerTracking: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-zinc-950 flex items-center justify-center p-4">
-      <div className="w-full max-w-md glass overflow-hidden">
+      <div className="w-full max-w-md glass overflow-hidden rounded-[32px]">
         {/* Header */}
         <div className="p-6 flex items-center justify-between border-b border-zinc-800/50">
           <button className="text-zinc-400"><ChevronLeft size={24} /></button>
           <div className="text-center">
             <h2 className="font-black text-sm uppercase tracking-widest text-zinc-500">Live Delivery</h2>
-            <p className="font-mono text-xs text-indigo-400">#ORD-7721</p>
+            <p className="font-mono text-xs text-cyan-400">#ORD-7721</p>
           </div>
           <div className="w-6" />
         </div>
 
         {/* Map Placeholder with AI routing vibe */}
         <div className="h-64 bg-zinc-900 relative flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(99,102,241,0.15)_0%,_transparent_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(34,211,238,0.15)_0%,_transparent_70%)]" />
           {/* Simulated paths */}
           <svg className="absolute inset-0 w-full h-full opacity-20">
-            <path d="M0,100 Q100,50 200,150 T400,100" stroke="#6366f1" fill="none" strokeWidth="2" strokeDasharray="5,5" />
+            <path d="M0,100 Q100,50 200,150 T400,100" stroke="#22d3ee" fill="none" strokeWidth="2" strokeDasharray="5,5" />
           </svg>
           
           <motion.div 
             animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
             transition={{ repeat: Infinity, duration: 2 }}
-            className="w-4 h-4 bg-indigo-500 rounded-full glow relative z-10"
+            className="w-4 h-4 bg-cyan-400 rounded-none glow relative z-10"
           >
-             <div className="absolute -inset-4 border border-indigo-500/30 rounded-full" />
+             <div className="absolute -inset-4 border border-cyan-400/30 rounded-none" />
           </motion.div>
           
           <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-            <div className="glass px-3 py-1.5 flex items-center gap-2">
-              <div className="w-2 h-2 bg-emerald-500 rounded-full" />
+            <div className="glass px-3 py-1.5 flex items-center gap-2 rounded-none">
+              <div className="w-2 h-2 bg-emerald-500 rounded-none" />
               <span className="text-[10px] font-black text-white">AI OPTIMIZED ROUTE</span>
             </div>
-            <div className="bg-indigo-500 text-white px-3 py-2 rounded-xl flex items-center gap-2 shadow-lg">
+            <div className="bg-cyan-400 text-black px-3 py-2 rounded-none flex items-center gap-2 shadow-lg">
               <Clock size={16} />
               <span className="text-lg font-black">{timeLeft}m</span>
             </div>
@@ -61,23 +61,23 @@ const CustomerTracking: React.FC = () => {
               <h3 className="text-2xl font-black text-white mb-1">In 14 Minutes</h3>
               <p className="text-zinc-500 text-sm font-medium">Expected Arrival: 7:14 PM</p>
             </div>
-            <div className="w-16 h-16 rounded-full bg-zinc-800 border-2 border-zinc-700 flex items-center justify-center">
-              <Package size={32} className="text-indigo-400" />
+            <div className="w-16 h-16 rounded-none bg-zinc-900 border-2 border-zinc-700 flex items-center justify-center">
+              <Package size={32} className="text-cyan-400" />
             </div>
           </div>
 
           {/* Progress Tracker */}
           <div className="space-y-4">
-            <div className="h-2 w-full bg-zinc-900 rounded-full overflow-hidden">
+            <div className="h-2 w-full bg-zinc-900 rounded-none overflow-hidden">
               <motion.div 
                 initial={{ width: 0 }}
                 animate={{ width: `${progress}%` }}
-                className="h-full bg-indigo-500 glow"
+                className="h-full bg-cyan-400 glow"
               />
             </div>
             <div className="flex justify-between text-[10px] font-black text-zinc-500 uppercase tracking-widest">
               <span>Picked Up</span>
-              <span className="text-indigo-400">On the way</span>
+              <span className="text-cyan-400">On the way</span>
               <span>Delivered</span>
             </div>
           </div>
@@ -85,13 +85,13 @@ const CustomerTracking: React.FC = () => {
           {/* Merchant Info (Performance Proof) */}
           <div className="glass p-4 bg-white/[0.02] border-white/5 flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-zinc-800 flex items-center justify-center">
-                <Star size={24} className="text-accent" fill="currentColor" />
+              <div className="w-12 h-12 rounded-none bg-zinc-800 flex items-center justify-center">
+                <Star size={24} className="text-cyan-400" fill="currentColor" />
               </div>
               <div>
                 <p className="text-sm font-bold text-white">Gadget Hub Central</p>
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] bg-indigo-500/20 text-indigo-400 px-1.5 py-0.5 rounded font-black">982 SCORE</span>
+                  <span className="text-[10px] bg-cyan-400/20 text-cyan-400 px-1.5 py-0.5 rounded-none font-black">982 SCORE</span>
                   <span className="text-[10px] text-zinc-500 font-bold">TOP FIELD MERCHANT</span>
                 </div>
               </div>
@@ -103,7 +103,7 @@ const CustomerTracking: React.FC = () => {
           </div>
         </div>
 
-        <button className="w-full py-6 bg-indigo-600 text-white font-black uppercase tracking-widest text-sm hover:bg-indigo-500 transition-colors">
+        <button className="w-full py-6 bg-cyan-400 text-black font-black uppercase tracking-widest text-sm hover:bg-white transition-colors rounded-none">
           View Live Feed
         </button>
       </div>
