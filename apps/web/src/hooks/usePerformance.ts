@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { MerchantScoreSnapshot, FieldMerchant } from '../types';
+import type { MerchantScoreSnapshot, FieldMerchant } from '../types';
 
 export const usePerformanceSimulation = () => {
   const [merchant] = useState<FieldMerchant>({
@@ -28,7 +28,7 @@ export const usePerformanceSimulation = () => {
   // Simulate scoring updates
   useEffect(() => {
     const interval = setInterval(() => {
-      setSnapshot(prev => ({
+      setSnapshot((prev: MerchantScoreSnapshot) => ({
         ...prev,
         speed_score: Math.min(1000, Math.max(0, prev.speed_score + (Math.random() - 0.5) * 5)),
         total_score: Math.round(

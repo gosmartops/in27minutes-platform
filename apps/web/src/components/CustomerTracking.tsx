@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { 
-  MapPin, 
   Package, 
   Clock, 
   ChevronLeft,
@@ -11,8 +10,8 @@ import {
 import { motion } from 'framer-motion';
 
 const CustomerTracking: React.FC = () => {
-  const [progress, setProgress] = useState(65);
-  const [timeLeft, setTimeLeft] = useState(14); // minutes
+  const [progress] = useState(65);
+  const [timeLeft] = useState(14); // minutes
 
   return (
     <div className="min-h-screen bg-zinc-950 flex items-center justify-center p-4">

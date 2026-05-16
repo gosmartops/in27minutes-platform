@@ -9,7 +9,7 @@ import {
   User,
   Bot
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { api } from '../lib/agents';
 
 interface Message {

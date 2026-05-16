@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   TrendingUp, 
   Clock, 
   Package, 
   ShieldCheck, 
-  ChevronRight,
   Zap,
   Award,
-  ArrowUpRight,
   BarChart3,
   Activity,
   AlertTriangle,
@@ -18,7 +16,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { usePerformanceSimulation } from '../hooks/usePerformance';
 
 const MerchantDashboard: React.FC = () => {
-  const { merchant, snapshot } = usePerformanceSimulation();
+  const { snapshot } = usePerformanceSimulation();
   const [activeOrders, setActiveOrders] = useState([
     { id: 'ORD-7725', items: 'USB-C Cable x2', timeRemaining: 840, priority: 'Critical', type: 'Tier 1' },
     { id: 'ORD-7730', items: 'MacBook Air M3 (Space Gray)', timeRemaining: 3600, priority: 'Normal', type: 'Tier 2' },

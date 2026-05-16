@@ -1,4 +1,37 @@
-// 2. CORE DATABASE SCHEMA (FOUNDATION)
+// 1. CORE TYPES & INTERFACES
+
+export interface MerchantScoreSnapshot {
+  merchant_id: string;
+  speed_score: number;
+  accuracy_score: number;
+  reliability_score: number;
+  satisfaction_score: number;
+  compliance_score: number;
+  location_efficiency_score: number;
+  total_score: number;
+  updated_at: number;
+}
+
+export interface MerchantEvent {
+  event_id: string;
+  merchant_id: string;
+  event_type: 'delivery' | 'failure' | 'acceptance' | 'rejection';
+  metadata: {
+    reason?: string;
+    late?: boolean;
+    rating?: number;
+    delta_time?: number;
+  };
+  timestamp: number;
+}
+
+export interface UserIntent {
+  product: string;
+  budget: number;
+  location: { lat: number, lng: number };
+  delivery_target: '27_minutes' | 'standard';
+}
+
 
 export interface FieldMerchant {
   id: string;

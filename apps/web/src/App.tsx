@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import MerchantDashboard from './components/MerchantDashboard'
 import CustomerTracking from './components/CustomerTracking'
 import ChatCommerce from './components/ChatCommerce'

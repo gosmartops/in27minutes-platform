@@ -1,11 +1,11 @@
-import { 
+import type { 
   FieldMerchant, 
   InventoryItem, 
   Order, 
   UserIntent, 
   MerchantScoreSnapshot,
   MerchantEvent
-} from './types';
+} from '../types';
 
 // 3. AI ROUTING ENGINE (CORE LOGIC)
 
