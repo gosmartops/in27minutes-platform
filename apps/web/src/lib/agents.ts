@@ -159,7 +159,7 @@ export const api = {
       { merchant_id: 'm2', speed_score: 700, accuracy_score: 800, reliability_score: 750, satisfaction_score: 850, compliance_score: 800, location_efficiency_score: 600, total_score: 740, updated_at: 0 }
     ];
     const inventory: InventoryItem[] = [
-      { id: 'p1', merchant_id: 'm1', product_name: 'iPhone 13', category: 'phones', price: 495000, stock_qty: 5, avg_preparation_time_minutes: 5, last_updated: 0 }
+      { id: 'p1', merchant_id: 'm1', product_name: 'Apple iPhone 13', category: 'phones', price: 495000, stock_qty: 5, avg_preparation_time_minutes: 5, last_updated: 0 }
     ];
 
     // 2. Product Match
