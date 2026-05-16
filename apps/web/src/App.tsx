@@ -3,8 +3,10 @@ import MerchantDashboard from './components/MerchantDashboard'
 import CustomerTracking from './components/CustomerTracking'
 import ChatCommerce from './components/ChatCommerce'
 import LandingPage from './components/LandingPage'
+import CustomerOnboarding from './components/onboarding/CustomerOnboarding'
+import MerchantOnboarding from './components/onboarding/MerchantOnboarding'
 
-type AppView = 'home' | 'chat' | 'merchant' | 'customer';
+type AppView = 'home' | 'customerOnboarding' | 'merchantOnboarding' | 'chat' | 'merchant' | 'customer';
 
 function App() {
   const [view, setView] = useState<AppView>('home');
@@ -50,10 +52,12 @@ function App() {
       <div className="pb-24">
         {view === 'home' && (
           <LandingPage 
-            onStartShopping={() => setView('chat')} 
-            onBecomeMerchant={() => setView('merchant')} 
+            onStartShopping={() => setView('customerOnboarding')} 
+            onBecomeMerchant={() => setView('merchantOnboarding')} 
           />
         )}
+        {view === 'customerOnboarding' && <CustomerOnboarding onComplete={() => setView('chat')} />}
+        {view === 'merchantOnboarding' && <MerchantOnboarding onComplete={() => setView('merchant')} />}
         {view === 'chat' && <ChatCommerce />}
         {view === 'merchant' && <MerchantDashboard />}
         {view === 'customer' && <CustomerTracking />}
