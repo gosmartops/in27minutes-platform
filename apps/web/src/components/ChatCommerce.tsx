@@ -134,7 +134,8 @@ const ChatCommerce: React.FC = () => {
             <div className="w-10 h-10 rounded-none bg-cyan-400/10 text-cyan-400 border border-cyan-400/20 flex items-center justify-center">
               <Bot size={20} />
             </div>
-            <div className="bg-zinc-900 p-4 rounded-none flex gap-1 items-center border border-zinc-800">
+            <div className="bg-zinc-900 p-4 rounded-none flex gap-1 items-center border border-zinc-800 relative overflow-hidden">
+              <div className="absolute inset-x-0 h-[1px] bg-cyan-400/20 blur-[1px] animate-scan-line pointer-events-none"></div>
               <motion.div animate={{ opacity: [0.3, 1, 0.3] }} transition={{ repeat: Infinity, duration: 1 }} className="w-1.5 h-1.5 bg-zinc-500 rounded-full" />
               <motion.div animate={{ opacity: [0.3, 1, 0.3] }} transition={{ repeat: Infinity, duration: 1, delay: 0.2 }} className="w-1.5 h-1.5 bg-zinc-500 rounded-full" />
               <motion.div animate={{ opacity: [0.3, 1, 0.3] }} transition={{ repeat: Infinity, duration: 1, delay: 0.4 }} className="w-1.5 h-1.5 bg-zinc-500 rounded-full" />

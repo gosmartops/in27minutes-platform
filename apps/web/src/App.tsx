@@ -13,6 +13,7 @@ function App() {
 
   return (
     <div className="App relative bg-zinc-950 min-h-screen">
+      <div className="living-bg" />
       {/* View Toggle */}
       <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 glass p-1.5 flex gap-1 border-white/10 shadow-2xl rounded-none">
         <button 

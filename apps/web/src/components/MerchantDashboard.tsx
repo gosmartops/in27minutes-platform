@@ -76,7 +76,13 @@ const MerchantDashboard: React.FC = () => {
         <div>
           <div className="flex items-center gap-3 mb-2">
             <h1 className="text-4xl font-black gradient-text tracking-tighter">In27Minutes<span className="text-cyan-400">.</span></h1>
-            <span className="px-3 py-1 bg-cyan-400/10 text-cyan-400 rounded-none text-[9px] font-black tracking-[0.2em] uppercase border border-cyan-400/20">MERCHANT NETWORK</span>
+            <div className="flex items-center gap-2 px-3 py-1 bg-cyan-400/10 border border-cyan-400/20 rounded-none">
+              <div className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+              </div>
+              <span className="text-cyan-400 text-[9px] font-black tracking-[0.2em] uppercase">MERCHANT NETWORK</span>
+            </div>
           </div>
           <p className="text-zinc-500 font-medium tracking-wide uppercase text-[9px] tracking-[0.3em]">AI Reputation-Based Logistics Economy</p>
         </div>
@@ -111,6 +117,7 @@ const MerchantDashboard: React.FC = () => {
                 exit={{ opacity: 0, scale: 0.9 }}
                 className="glass border-2 border-cyan-400 p-8 relative overflow-hidden bg-cyan-400/[0.05]"
               >
+                <div className="absolute inset-x-0 h-[1px] bg-cyan-400/30 blur-[1px] animate-scan-line pointer-events-none"></div>
                 <div className="absolute top-0 right-0 p-4">
                   <div className="flex flex-col items-end">
                     <span className="text-[9px] font-black text-cyan-400 uppercase tracking-[0.2em] mb-1">Acceptance Window</span>
