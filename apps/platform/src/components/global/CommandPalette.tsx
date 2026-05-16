@@ -69,9 +69,9 @@ export default function CommandPalette() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="What do you need to do?"
-                className="w-full bg-transparent text-white placeholder-zinc-600 outline-none font-satoshi text-lg"
+                className="w-full bg-transparent text-white placeholder-zinc-600 outline-none font-satoshi text-lg py-1"
               />
-              <kbd className="hidden sm:inline-flex px-2 py-1 rounded bg-white/5 border border-white/10 text-[10px] font-mono text-zinc-500 uppercase tracking-widest">ESC</kbd>
+              <kbd className="hidden sm:inline-flex px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[10px] font-mono text-zinc-500 uppercase tracking-widest ml-2 shrink-0">ESC</kbd>
             </div>
 
             {/* Results Area */}
@@ -91,7 +91,7 @@ export default function CommandPalette() {
                         </div>
                         <span className="font-medium text-zinc-300 group-hover:text-white transition-colors">{action.title}</span>
                       </div>
-                      <kbd className="px-2 py-1 rounded bg-black/50 border border-white/5 text-[10px] font-mono text-zinc-600 group-hover:text-accent transition-colors">
+                      <kbd className="hidden sm:flex items-center justify-center min-w-[24px] h-[24px] rounded-md bg-black/50 border border-white/5 text-[10px] font-mono text-zinc-500 group-hover:text-accent group-hover:border-accent/30 transition-colors shadow-inner">
                         {action.shortcut}
                       </kbd>
                     </button>

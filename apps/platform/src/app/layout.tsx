@@ -31,11 +31,11 @@ export default function RootLayout({
               <span className="font-bold font-satoshi tracking-tight text-xl">In27Minutes<span className="text-accent">.</span></span>
             </div>
             
-            <nav className="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-widest text-zinc-500">
-              <a href="/" className="hover:text-white transition-colors">OS</a>
-              <a href="/app/home" className="hover:text-white transition-colors">Commerce Engine</a>
-              <a href="/merchant/dashboard" className="hover:text-white transition-colors">Nodes</a>
-              <a href="/driver/dashboard" className="hover:text-white transition-colors">Fleet</a>
+            <nav className="hidden md:flex items-center gap-10 lg:gap-12 text-xs font-bold uppercase tracking-widest text-zinc-500">
+              <a href="/" className="hover:text-white transition-colors py-2">OS</a>
+              <a href="/app/home" className="hover:text-white transition-colors py-2">Commerce Engine</a>
+              <a href="/merchant/dashboard" className="hover:text-white transition-colors py-2">Nodes</a>
+              <a href="/driver/dashboard" className="hover:text-white transition-colors py-2">Fleet</a>
             </nav>
             
             <div className="flex items-center gap-4">
