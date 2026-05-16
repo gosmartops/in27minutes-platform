@@ -75,16 +75,16 @@ const MerchantDashboard: React.FC = () => {
       <header className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
         <div>
           <div className="flex items-center gap-3 mb-2">
-            <h1 className="text-4xl font-black gradient-text tracking-tighter">In27Minutes</h1>
-            <span className="px-3 py-1 bg-cyan-400/10 text-cyan-400 rounded-none text-[10px] font-bold tracking-widest border border-cyan-400/20">MERCHANT NETWORK</span>
+            <h1 className="text-4xl font-black gradient-text tracking-tighter">In27Minutes<span className="text-cyan-400">.</span></h1>
+            <span className="px-3 py-1 bg-cyan-400/10 text-cyan-400 rounded-none text-[9px] font-black tracking-[0.2em] uppercase border border-cyan-400/20">MERCHANT NETWORK</span>
           </div>
-          <p className="text-zinc-500 font-medium tracking-wide uppercase text-xs">AI Reputation-Based Logistics Economy</p>
+          <p className="text-zinc-500 font-medium tracking-wide uppercase text-[9px] tracking-[0.3em]">AI Reputation-Based Logistics Economy</p>
         </div>
         
         <div className="flex gap-4">
           <div className="glass px-6 py-4 flex items-center gap-4">
             <div className="text-right">
-              <p className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">Base Reputation</p>
+              <p className="text-[9px] text-zinc-500 font-black uppercase tracking-[0.2em]">Base Reputation</p>
               <div className="flex items-baseline gap-1">
                 <motion.p key={snapshot.total_score} className="text-3xl font-black text-cyan-400">{snapshot.total_score}</motion.p>
                 <span className="text-zinc-600 text-lg font-bold">/1000</span>
@@ -113,7 +113,7 @@ const MerchantDashboard: React.FC = () => {
               >
                 <div className="absolute top-0 right-0 p-4">
                   <div className="flex flex-col items-end">
-                    <span className="text-[10px] font-black text-cyan-400 uppercase mb-1">Acceptance Window</span>
+                    <span className="text-[9px] font-black text-cyan-400 uppercase tracking-[0.2em] mb-1">Acceptance Window</span>
                     <span className="text-3xl font-mono font-black text-cyan-400">{incomingDemand.countdown}s</span>
                   </div>
                 </div>
@@ -123,16 +123,16 @@ const MerchantDashboard: React.FC = () => {
                     <Zap size={32} fill="currentColor" />
                   </div>
                   <div className="flex-1">
-                    <h2 className="text-2xl font-black text-white mb-1">Incoming AI Intent</h2>
-                    <p className="text-zinc-400 text-sm font-medium mb-6">User intent matched to your performance & stock profile.</p>
+                    <h2 className="text-2xl font-black text-white mb-1">Incoming AI Intent<span className="text-cyan-400">.</span></h2>
+                    <p className="text-zinc-500 text-sm font-medium mb-6">User intent matched to your performance & stock profile.</p>
                     
                     <div className="grid grid-cols-2 gap-4 mb-8">
                       <div className="p-4 bg-zinc-900/50 rounded-none border border-zinc-800">
-                        <p className="text-[10px] text-zinc-500 font-bold uppercase mb-1">Product</p>
+                        <p className="text-[9px] text-zinc-500 font-black uppercase tracking-[0.2em] mb-1">Product</p>
                         <p className="text-white font-bold">{incomingDemand.product}</p>
                       </div>
                       <div className="p-4 bg-zinc-900/50 rounded-none border border-zinc-800">
-                        <p className="text-[10px] text-zinc-500 font-bold uppercase mb-1">Yield</p>
+                        <p className="text-[9px] text-zinc-500 font-black uppercase tracking-[0.2em] mb-1">Yield</p>
                         <p className="text-white font-bold">₦{(incomingDemand.price / 1000).toFixed(0)}k</p>
                       </div>
                     </div>
@@ -151,7 +151,7 @@ const MerchantDashboard: React.FC = () => {
                         <XCircle size={20} /> REJECT
                       </button>
                     </div>
-                    <p className="mt-4 text-[10px] text-zinc-600 font-bold uppercase text-center">Note: Rejection impact: -10 Reliability Score</p>
+                    <p className="mt-4 text-[9px] text-zinc-600 font-black uppercase tracking-[0.2em] text-center">Note: Rejection impact: -10 Reliability Score</p>
                   </div>
                 </div>
               </motion.div>
@@ -159,17 +159,17 @@ const MerchantDashboard: React.FC = () => {
           </AnimatePresence>
           
           {/* Detailed Score Breakdown */}
-          <section className="glass p-8">
+          <section className="glass p-8 rounded-[32px]">
             <h2 className="text-xl font-bold mb-8 flex items-center gap-3">
               <BarChart3 className="text-cyan-400" size={24} />
-              Performance DNA
+              Performance DNA<span className="text-cyan-400">.</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
               {metricConfig.map((m) => (
                 <div key={m.label} className="space-y-4">
                   <div className="flex justify-between items-end">
                     <div className="space-y-1">
-                      <span className="text-zinc-500 text-[10px] font-black uppercase tracking-widest flex items-center gap-2">
+                      <span className="text-zinc-500 text-[9px] font-black uppercase tracking-[0.2em] flex items-center gap-2">
                         <m.icon size={12} /> {m.label} <span className="text-cyan-400 opacity-50">({m.weight})</span>
                       </span>
                       <p className="text-white font-black text-2xl">{m.val.toFixed(0)} <span className="text-zinc-700 text-sm">/ {m.max}</span></p>
@@ -192,11 +192,11 @@ const MerchantDashboard: React.FC = () => {
           <section>
             <h2 className="text-xl font-bold mb-6 flex items-center gap-3 text-emerald-400">
               <CheckCircle2 size={24} />
-              Execution Layer
+              Execution Layer<span className="text-emerald-400/50">.</span>
             </h2>
             <div className="space-y-4">
               {activeOrders.map((order) => (
-                <div key={order.id} className="glass p-6 flex items-center justify-between group hover:border-emerald-500/30 transition-all">
+                <div key={order.id} className="glass p-6 flex items-center justify-between group hover:border-emerald-500/30 transition-all rounded-[32px]">
                   <div className="flex items-center gap-6">
                     <div className={`w-14 h-14 rounded-none flex items-center justify-center bg-zinc-900 border border-zinc-800 ${order.priority === 'Critical' ? 'text-rose-400' : 'text-emerald-400'}`}>
                       <Package size={28} />
@@ -210,7 +210,7 @@ const MerchantDashboard: React.FC = () => {
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="text-[10px] text-zinc-500 font-black uppercase mb-1">Countdown</p>
+                    <p className="text-[9px] text-zinc-500 font-black uppercase tracking-[0.2em] mb-1">Countdown</p>
                     <p className={`text-3xl font-mono font-black ${order.timeRemaining < 300 ? 'text-rose-500' : 'text-emerald-400'}`}>
                       {formatTime(order.timeRemaining)}
                     </p>
@@ -226,8 +226,8 @@ const MerchantDashboard: React.FC = () => {
         <div className="lg:col-span-4 space-y-8">
           
           {/* Penalty/Reward Panel */}
-          <section className="glass p-6 border-rose-500/20 bg-rose-500/[0.02]">
-            <h3 className="font-bold text-rose-400 mb-6 flex items-center gap-2 uppercase text-sm tracking-widest">
+          <section className="glass p-6 border-rose-500/20 bg-rose-500/[0.02] rounded-[32px]">
+            <h3 className="font-bold text-rose-400 mb-6 flex items-center gap-2 uppercase text-[9px] tracking-[0.3em]">
               <AlertTriangle size={18} /> Enforcement Alerts
             </h3>
             <div className="space-y-4">
@@ -249,14 +249,14 @@ const MerchantDashboard: React.FC = () => {
           </section>
 
           {/* AI Insights - Re-branded */}
-          <section className="glass p-8 bg-cyan-400/[0.03]">
+          <section className="glass p-8 bg-cyan-400/[0.03] rounded-[32px]">
              <div className="flex items-center gap-4 mb-8">
               <div className="w-12 h-12 rounded-none bg-cyan-400 flex items-center justify-center text-black glow">
                 <TrendingUp size={24} />
               </div>
               <div>
-                <h3 className="font-bold">Yield Engine</h3>
-                <p className="text-[10px] text-cyan-400 font-black uppercase tracking-widest">Market Predictions</p>
+                <h3 className="font-bold text-white">Yield Engine<span className="text-cyan-400">.</span></h3>
+                <p className="text-[9px] text-cyan-400 font-black uppercase tracking-[0.2em]">Market Predictions</p>
               </div>
             </div>
             
@@ -270,7 +270,7 @@ const MerchantDashboard: React.FC = () => {
                 <span className="font-mono font-bold text-emerald-400">8.2%</span>
               </div>
               <div className="pt-2">
-                <p className="text-[10px] text-zinc-500 font-black uppercase mb-4">Network Saturation</p>
+                <p className="text-[9px] text-zinc-500 font-black uppercase tracking-[0.2em] mb-4">Network Saturation</p>
                 <div className="h-1 w-full bg-zinc-900 rounded-full">
                   <div className="h-full bg-cyan-400 w-[65%]" />
                 </div>

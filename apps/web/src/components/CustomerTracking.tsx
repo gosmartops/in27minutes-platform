@@ -20,7 +20,7 @@ const CustomerTracking: React.FC = () => {
         <div className="p-6 flex items-center justify-between border-b border-zinc-800/50">
           <button className="text-zinc-400"><ChevronLeft size={24} /></button>
           <div className="text-center">
-            <h2 className="font-black text-sm uppercase tracking-widest text-zinc-500">Live Delivery</h2>
+            <h2 className="font-black text-[9px] uppercase tracking-[0.4em] text-zinc-500">Live Delivery<span className="text-cyan-400">.</span></h2>
             <p className="font-mono text-xs text-cyan-400">#ORD-7721</p>
           </div>
           <div className="w-6" />
@@ -58,8 +58,8 @@ const CustomerTracking: React.FC = () => {
         <div className="p-8 space-y-8">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-2xl font-black text-white mb-1">In 14 Minutes</h3>
-              <p className="text-zinc-500 text-sm font-medium">Expected Arrival: 7:14 PM</p>
+              <h3 className="text-2xl font-black text-white mb-1">In 14 Minutes<span className="text-cyan-400">.</span></h3>
+              <p className="text-zinc-500 text-sm font-medium uppercase tracking-[0.2em] text-[9px]">Expected Arrival: 7:14 PM</p>
             </div>
             <div className="w-16 h-16 rounded-none bg-zinc-900 border-2 border-zinc-700 flex items-center justify-center">
               <Package size={32} className="text-cyan-400" />
@@ -75,7 +75,7 @@ const CustomerTracking: React.FC = () => {
                 className="h-full bg-cyan-400 glow"
               />
             </div>
-            <div className="flex justify-between text-[10px] font-black text-zinc-500 uppercase tracking-widest">
+            <div className="flex justify-between text-[9px] font-black text-zinc-500 uppercase tracking-[0.2em]">
               <span>Picked Up</span>
               <span className="text-cyan-400">On the way</span>
               <span>Delivered</span>
@@ -89,10 +89,10 @@ const CustomerTracking: React.FC = () => {
                 <Star size={24} className="text-cyan-400" fill="currentColor" />
               </div>
               <div>
-                <p className="text-sm font-bold text-white">Gadget Hub Central</p>
+                <p className="text-sm font-bold text-white">Gadget Hub Central<span className="text-cyan-400">.</span></p>
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] bg-cyan-400/20 text-cyan-400 px-1.5 py-0.5 rounded-none font-black">982 SCORE</span>
-                  <span className="text-[10px] text-zinc-500 font-bold">TOP FIELD MERCHANT</span>
+                  <span className="text-[9px] bg-cyan-400/20 text-cyan-400 px-1.5 py-0.5 rounded-none font-black tracking-[0.1em]">982 SCORE</span>
+                  <span className="text-[9px] text-zinc-500 font-black uppercase tracking-[0.1em]">TOP FIELD MERCHANT</span>
                 </div>
               </div>
             </div>

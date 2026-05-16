@@ -55,8 +55,11 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
+            <div className="mb-4">
+              <span className="text-[9px] text-cyan-400 font-black uppercase tracking-[0.4em]">AI-Native Commerce Network</span>
+            </div>
             <h1 className="text-6xl md:text-8xl font-black gradient-text tracking-tighter leading-[0.9] mb-8">
-              Commerce.<br />Delivered in 27 Minutes.
+              Commerce.<br />Delivered in 27 Minutes<span className="text-cyan-400">.</span>
             </h1>
             <p className="text-xl md:text-2xl text-zinc-400 font-medium max-w-2xl mx-auto mb-12 leading-relaxed">
               In27Minutes is an AI-native commerce network where you simply say what you need, and our AI finds it, assigns a Field Merchant, and delivers it fast.
@@ -86,7 +89,10 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
       <section id="how-it-works" className="py-32 px-6 bg-zinc-950/50">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20 text-center">
-            <h2 className="text-4xl font-black mb-4 tracking-tight">How In27Minutes Works</h2>
+            <div className="mb-4">
+              <span className="text-[9px] text-cyan-400 font-black uppercase tracking-[0.4em]">Operational Workflow</span>
+            </div>
+            <h2 className="text-4xl font-black mb-4 tracking-tight">How In27Minutes Works<span className="text-cyan-400">.</span></h2>
             <p className="text-zinc-500 font-bold uppercase text-[10px] tracking-[0.3em]">Just intent → AI → delivery</p>
           </div>
 
@@ -136,8 +142,11 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
       <section className="py-32 px-6 border-y border-white/5">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
-            <h2 className="text-4xl font-black mb-8 tracking-tight">A New Way to Shop</h2>
-            <div className="space-y-6 text-zinc-400 text-lg leading-relaxed">
+            <div className="mb-4">
+              <span className="text-[9px] text-cyan-400 font-black uppercase tracking-[0.4em]">Protocol Advantage</span>
+            </div>
+            <h2 className="text-4xl font-black mb-8 tracking-tight leading-tight">A New Way to Shop<span className="text-cyan-400">.</span></h2>
+            <div className="space-y-6 text-zinc-500 text-lg leading-relaxed">
               <p>Traditional e-commerce makes you search. <span className="text-white font-bold">We remove searching completely.</span></p>
               <div className="space-y-4">
                 {[
@@ -186,11 +195,14 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-5">
-              <h2 className="text-4xl font-black mb-8 tracking-tight leading-tight">Meet Field Merchants</h2>
-              <p className="text-lg text-zinc-400 leading-relaxed mb-8">
+              <div className="mb-4">
+                <span className="text-[9px] text-cyan-400 font-black uppercase tracking-[0.4em]">Fulfillment Layer</span>
+              </div>
+              <h2 className="text-4xl font-black mb-8 tracking-tight leading-tight">Meet Field Merchants<span className="text-cyan-400">.</span></h2>
+              <p className="text-lg text-zinc-500 leading-relaxed mb-8">
                 Field Merchants are the backbone of In27Minutes. They are real, verified local businesses that store inventory, fulfill orders, and deliver directly.
               </p>
-              <div className="p-8 glass border-emerald-500/20 bg-emerald-500/[0.02]">
+              <div className="p-8 glass border-emerald-500/20 bg-emerald-500/[0.02] rounded-[32px]">
                 <h4 className="text-emerald-400 font-black text-2xl mb-4 italic italic">"Merchants don’t chase customers. AI brings customers to them."</h4>
                 <button 
                   onClick={onBecomeMerchant}
@@ -221,8 +233,11 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
       <section className="py-32 px-6 bg-cyan-400 overflow-hidden relative">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter italic">The 27-Minute Promise</h2>
-          <p className="text-xl md:text-2xl text-white/80 font-medium mb-12 leading-relaxed">
+          <div className="mb-4">
+            <span className="text-[9px] text-black font-black uppercase tracking-[0.4em]">Service Standard</span>
+          </div>
+          <h2 className="text-5xl md:text-7xl font-black text-black mb-8 tracking-tighter italic">The 27-Minute Promise<span className="text-black/30">.</span></h2>
+          <p className="text-xl md:text-2xl text-black/80 font-medium mb-12 leading-relaxed">
             Our system prioritizes ultra-fast delivery where possible. Speed is not luck. It’s AI orchestration.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -239,11 +254,14 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
       <section className="py-32 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="mb-20 text-center">
-            <h2 className="text-4xl font-black mb-4 tracking-tight">Not a Marketplace. A Commerce Network.</h2>
+            <div className="mb-4">
+              <span className="text-[9px] text-cyan-400 font-black uppercase tracking-[0.4em]">Network Differentiation</span>
+            </div>
+            <h2 className="text-4xl font-black mb-4 tracking-tight">Not a Marketplace. A Commerce Network<span className="text-cyan-400">.</span></h2>
             <p className="text-zinc-500 font-bold uppercase text-[10px] tracking-[0.3em]">No browsing. No friction. No delay.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="glass p-10 border-rose-500/20">
+            <div className="glass p-10 border-rose-500/20 rounded-[32px]">
               <h3 className="text-rose-400 font-black text-xl mb-8 uppercase tracking-widest">Traditional</h3>
               <ul className="space-y-6">
                 {["You search", "You compare", "You wait"].map((l, i) => (
@@ -253,7 +271,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
                 ))}
               </ul>
             </div>
-            <div className="glass p-10 border-emerald-500/20 bg-emerald-500/[0.03] scale-105 shadow-2xl">
+            <div className="glass p-10 border-emerald-500/20 bg-emerald-500/[0.03] scale-105 shadow-2xl rounded-[32px]">
               <h3 className="text-emerald-400 font-black text-xl mb-8 uppercase tracking-widest">In27Minutes</h3>
               <ul className="space-y-6">
                 {["You speak", "AI decides", "Merchants execute"].map((l, i) => (
@@ -271,8 +289,11 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
       <section id="performance" className="py-32 px-6 bg-zinc-900/50">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
-            <h2 className="text-4xl font-black mb-8 tracking-tight">Built on Performance Intelligence</h2>
-            <p className="text-lg text-zinc-400 leading-relaxed mb-8">
+            <div className="mb-4">
+              <span className="text-[9px] text-cyan-400 font-black uppercase tracking-[0.4em]">Reputation Protocol</span>
+            </div>
+            <h2 className="text-4xl font-black mb-8 tracking-tight">Built on Performance Intelligence<span className="text-cyan-400">.</span></h2>
+            <p className="text-lg text-zinc-500 leading-relaxed mb-8">
               Every Field Merchant is scored in real time. Top performers get more orders. Low performers get filtered out.
             </p>
             <div className="grid grid-cols-2 gap-4">
@@ -315,8 +336,11 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartShopping, onBecomeMerc
       {/* Final CTA */}
       <section className="py-40 px-6 text-center relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[400px] bg-cyan-400/20 blur-[100px] rounded-full -z-10" />
-        <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter">Start Shopping Differently</h2>
-        <p className="text-xl text-zinc-400 font-medium mb-12 max-w-xl mx-auto">
+        <div className="mb-4">
+          <span className="text-[9px] text-cyan-400 font-black uppercase tracking-[0.4em]">Immediate Activation</span>
+        </div>
+        <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter">Start Shopping Differently<span className="text-cyan-400">.</span></h2>
+        <p className="text-xl text-zinc-500 font-medium mb-12 max-w-xl mx-auto">
           Tell AI what you need. We’ll handle everything else.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

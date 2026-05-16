@@ -67,8 +67,8 @@ const ChatCommerce: React.FC = () => {
             <Sparkles size={20} fill="black" />
           </div>
           <div>
-            <h1 className="font-black text-lg tracking-tight">In27Minutes</h1>
-            <p className="text-[10px] text-cyan-400 font-bold uppercase tracking-widest">AI Shopping Agent</p>
+            <h1 className="font-black text-lg tracking-tight">In27Minutes<span className="text-cyan-400">.</span></h1>
+            <p className="text-[9px] text-cyan-400 font-black uppercase tracking-[0.2em]">AI Shopping Agent</p>
           </div>
         </div>
       </header>
@@ -97,18 +97,18 @@ const ChatCommerce: React.FC = () => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       key={i}
-                      className="glass p-5 border-cyan-400/30 bg-cyan-400/[0.03] group hover:border-cyan-400/50 transition-all cursor-pointer rounded-none"
+                      className="glass p-5 border-cyan-400/30 bg-cyan-400/[0.03] group hover:border-cyan-400/50 transition-all cursor-pointer rounded-[32px]"
                     >
                       <div className="flex gap-4">
-                        <div className="w-16 h-16 rounded-none bg-zinc-900 border border-zinc-800 flex items-center justify-center text-cyan-400">
+                        <div className="w-16 h-16 rounded-[32px] bg-zinc-900 border border-zinc-800 flex items-center justify-center text-cyan-400">
                           <Package size={32} />
                         </div>
-                        <div className="flex-1">
-                          <div className="flex justify-between items-start mb-1">
+                         <div className="flex-1">
+                          <div className="flex justify-between items-start mb-1 mt-1">
                             <h4 className="font-bold text-white">{res.title}</h4>
                             <span className="text-emerald-400 font-mono font-black">₦{(res.price/1000).toFixed(0)}k</span>
                           </div>
-                          <p className="text-[10px] text-zinc-500 font-bold uppercase mb-3">{res.merchant_name} · {res.eta_minutes}m · Tier {res.sla_tier}</p>
+                          <p className="text-[9px] text-zinc-500 font-black uppercase tracking-[0.2em] mb-3">{res.merchant_name} · {res.eta_minutes}m · Tier {res.sla_tier}</p>
                           <div className="flex items-center gap-3">
                             <span className="text-[10px] bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded-none font-bold flex items-center gap-1">
                               <ShieldCheck size={10} /> Verified Stock
@@ -160,7 +160,7 @@ const ChatCommerce: React.FC = () => {
             <Send size={18} />
           </button>
         </form>
-        <p className="mt-4 text-[10px] text-zinc-600 font-bold uppercase text-center tracking-widest">
+        <p className="mt-4 text-[9px] text-zinc-600 font-black uppercase text-center tracking-[0.2em]">
           Secured by AI Routing · 27-Minute Standard
         </p>
       </div>
