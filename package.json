@@ -10,6 +10,8 @@
   ],
   "scripts": {
     "dev:web": "npm run dev --workspace=apps/web",
-    "build:web": "npm run build --workspace=apps/web"
+    "build:web": "npm run build --workspace=apps/web",
+    "dev:platform": "npm run dev --workspace=apps/platform",
+    "build:platform": "npm run build --workspace=apps/platform"
   }
 }
