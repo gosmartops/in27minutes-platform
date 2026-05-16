@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --bg-color: #050505;
   --card-bg: rgba(10, 10, 10, 0.8);
@@ -141,9 +137,6 @@ body {
   100% { transform: translateY(100%); }
 }
 
-
-@layer utilities {
-  .animate-scan-line {
-    animation: scan-line 2s linear infinite;
-  }
+.animate-scan-line {
+  animation: scan-line 2s linear infinite;
 }
