@@ -1,0 +1,229 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// 2.1 USER MODEL
+model User {
+  id              String   @id @default(cuid())
+  phone           String   @unique
+  email           String?
+  name            String?
+  password        String?
+  locationLat     Float?
+  locationLng     Float?
+
+  preferences     Json?    // AI memory (budget, taste, behavior)
+  createdAt       DateTime @default(now())
+
+  orders          Order[]
+  intentLogs      AIIntentLog[]
+}
+
+// 2.2 FIELD MERCHANT (CORE ENTITY)
+model FieldMerchant {
+  id              String   @id @default(cuid())
+  name            String
+  phone           String
+  type            MerchantType
+
+  locationLat     Float
+  locationLng     Float
+  address         String
+
+  isActive        Boolean  @default(true)
+
+  baseScore       Float    @default(500)
+  speedScore      Float    @default(500)
+  accuracyScore   Float    @default(500)
+  reliabilityScore Float   @default(500)
+  satisfactionScore Float  @default(500)
+  complianceScore Float    @default(500)
+
+  totalScore      Float    @default(500)
+
+  createdAt       DateTime @default(now())
+
+  inventory       InventoryItem[]
+  orders          Order[]
+  events          MerchantEvent[]
+  scoreSnapshots  MerchantScoreSnapshot[]
+}
+
+enum MerchantType {
+  RETAIL
+  MICRO
+  WAREHOUSE
+  MOBILE
+}
+
+// 2.3 INVENTORY (MERCHANT-OWNED STOCK)
+model InventoryItem {
+  id              String   @id @default(cuid())
+  merchantId      String
+  merchant        FieldMerchant @relation(fields: [merchantId], references: [id])
+
+  name            String
+  category        String
+  brand           String?
+  price           Float
+  stockQty        Int
+
+  avgPrepTimeMin  Int      @default(5)
+
+  imageUrl        String?
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+// 2.4 ORDERS (CORE EXECUTION UNIT)
+model Order {
+  id                String   @id @default(cuid())
+
+  userId            String
+  user              User     @relation(fields: [userId], references: [id])
+
+  merchantId       String?
+  merchant         FieldMerchant? @relation(fields: [merchantId], references: [id])
+
+  productName      String
+  quantity         Int      @default(1)
+  price            Float
+
+  status           OrderStatus @default(PENDING)
+
+  intentJson       Json     // AI extracted intent
+  deliveryTier     DeliveryTier
+
+  createdAt        DateTime @default(now())
+  acceptedAt       DateTime?
+  deliveredAt      DateTime?
+
+  promisedMinutes  Int      // 27, same-day, etc
+  actualMinutes    Int?
+
+  tracking        DeliveryTracking[]
+  payments        Payment[]
+}
+
+enum OrderStatus {
+  PENDING
+  ASSIGNED
+  ACCEPTED
+  PROCESSING
+  OUT_FOR_DELIVERY
+  DELIVERED
+  FAILED
+  CANCELLED
+}
+
+enum DeliveryTier {
+  MINUTES_27
+  SAME_DAY
+  SCHEDULED
+}
+
+// 2.5 MERCHANT EVENTS (REAL-TIME SYSTEM LOG)
+model MerchantEvent {
+  id            String   @id @default(cuid())
+  merchantId    String
+  merchant      FieldMerchant @relation(fields: [merchantId], references: [id])
+
+  orderId       String?
+  type          MerchantEventType
+
+  metadata      Json?
+
+  createdAt     DateTime @default(now())
+}
+
+enum MerchantEventType {
+  ORDER_ASSIGNED
+  ORDER_ACCEPTED
+  ORDER_REJECTED
+  ORDER_DELAYED
+  ORDER_DELIVERED
+  ORDER_FAILED
+  PENALTY_APPLIED
+}
+
+// 2.6 DELIVERY TRACKING
+model DeliveryTracking {
+  id            String   @id @default(cuid())
+
+  orderId       String
+  order         Order    @relation(fields: [orderId], references: [id])
+
+  status        String
+  locationLat   Float?
+  locationLng   Float?
+
+  etaMinutes    Int?
+
+  createdAt     DateTime @default(now())
+}
+
+// 2.7 MERCHANT SCORING SNAPSHOT
+model MerchantScoreSnapshot {
+  id              String   @id @default(cuid())
+
+  merchantId      String
+  merchant        FieldMerchant @relation(fields: [merchantId], references: [id])
+
+  speedScore      Float
+  accuracyScore   Float
+  reliabilityScore Float
+  satisfactionScore Float
+  complianceScore Float
+
+  totalScore      Float
+
+  delta           Float    // change from previous snapshot
+
+  createdAt       DateTime @default(now())
+}
+
+// 2.8 AI INTENT LOG (LEARNING LAYER)
+model AIIntentLog {
+  id              String   @id @default(cuid())
+
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+
+  rawMessage      String
+  intentJson      Json
+
+  createdAt       DateTime @default(now())
+}
+
+// 2.9 PAYMENT RECORDS
+model Payment {
+  id              String   @id @default(cuid())
+
+  orderId         String
+  order           Order    @relation(fields: [orderId], references: [id])
+
+  amount          Float
+  currency        String   @default("NGN")
+
+  status          PaymentStatus
+
+  provider        String   // paystack, flutterwave
+
+  createdAt       DateTime @default(now())
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCESS
+  FAILED
+  REFUNDED
+}
